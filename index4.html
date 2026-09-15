@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagamento da Compra</title>
+</head>
+<body>
+    <h1>Pagamento da Compra</h1>
+    <p id="resultado"></p>
+
+    <script>
+        const entrada = prompt(
+            "Digite o valor total da compra (exemplo: 150,50):"
+        );
+
+        const valorTotal = entrada === null
+            ? NaN
+            : Number(entrada.trim().replace(",", "."));
+
+        const resultado = document.getElementById("resultado");
+
+        if (!Number.isFinite(valorTotal) || valorTotal <= 0) {
+            resultado.textContent =
+                "Valor inválido! Informe um valor maior que zero.";
+        } else {
+            const pagamento = prompt(
+                "Escolha a forma de pagamento:\n" +
+                "1 - Dinheiro/PIX (10% de desconto)\n" +
+                "2 - Débito (5% de desconto)\n" +
+                "3 - Crédito (sem desconto)"
+            );
+
+            let valorFinal;
+
+            switch (pagamento) {
+                case "1":
+                    valorFinal = valorTotal * 0.90;
+                    break;
+                case "2":
+                    valorFinal = valorTotal * 0.95;
+                    break;
+                case "3":
+                    valorFinal = valorTotal;
+                    break;
+                default:
+                    valorFinal = null;
+            }
+
+            if (valorFinal !== null) {
+                resultado.textContent =
+                    "Valor final a pagar: " +
+                    valorFinal.toLocaleString("pt-BR", {
+                        style: "currency",
+                        currency: "BRL"
+                    });
+            } else {
+                resultado.textContent =
+                    "Forma de pagamento inválida! Escolha de 1 a 3.";
+            }
+        }
+    </script>
+</body>
+</html>
