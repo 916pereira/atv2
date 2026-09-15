@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gênero Musical Preferido</title>
+</head>
+<body>
+    <h1>Gênero Musical Preferido</h1>
+    <p id="resultado"></p>
+
+    <script>
+        const opcao = prompt(
+            "Selecione seu gênero musical preferido:\n" +
+            "1 - Rock\n" +
+            "2 - Pop\n" +
+            "3 - Hip Hop\n" +
+            "4 - Eletrônica\n" +
+            "5 - Jazz\n" +
+            "6 - Clássica"
+        );
+
+        let genero;
+
+        switch (opcao) {
+            case "1":
+                genero = "Rock";
+                break;
+            case "2":
+                genero = "Pop";
+                break;
+            case "3":
+                genero = "Hip Hop";
+                break;
+            case "4":
+                genero = "Eletrônica";
+                break;
+            case "5":
+                genero = "Jazz";
+                break;
+            case "6":
+                genero = "Clássica";
+                break;
+            default:
+                genero = null;
+        }
+
+        const resultado = document.getElementById("resultado");
+
+        if (genero !== null) {
+            resultado.textContent =
+                "Seu gênero musical preferido é: " + genero;
+        } else {
+            resultado.textContent =
+                "Opção inválida! Escolha um número de 1 a 6.";
+        }
+    </script>
+</body>
+</html>
