@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Estilo de Filme Favorito</title>
+</head>
+<body>
+    <h1>Estilo de Filme Favorito</h1>
+    <p id="resultado"></p>
+
+    <script>
+        const opcao = prompt(
+            "Selecione seu estilo de filme favorito:\n" +
+            "1 - Ação\n" +
+            "2 - Comédia\n" +
+            "3 - Drama\n" +
+            "4 - Terror\n" +
+            "5 - Ficção Científica\n" +
+            "6 - Romance"
+        );
+
+        let estilo;
+
+        switch (opcao) {
+            case "1":
+                estilo = "Ação";
+                break;
+            case "2":
+                estilo = "Comédia";
+                break;
+            case "3":
+                estilo = "Drama";
+                break;
+            case "4":
+                estilo = "Terror";
+                break;
+            case "5":
+                estilo = "Ficção Científica";
+                break;
+            case "6":
+                estilo = "Romance";
+                break;
+            default:
+                estilo = null;
+        }
+
+        const resultado = document.getElementById("resultado");
+
+        if (estilo !== null) {
+            resultado.textContent =
+                "Seu estilo de filme favorito é: " + estilo;
+        } else {
+            resultado.textContent =
+                "Opção inválida! Escolha um número de 1 a 6.";
+        }
+    </script>
+</body>
+</html>
