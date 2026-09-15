@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Escolha sua Área de Interesse</title>
+</head>
+<body>
+    <h1>Áreas de Tecnologia</h1>
+    <p id="resultado"></p>
+
+    <script>
+        const opcao = prompt(
+            "Escolha uma área de tecnologia para explorar:\n" +
+            "1 - Programação\n" +
+            "2 - Desenvolvimento de Jogos\n" +
+            "3 - Inteligência Artificial\n" +
+            "4 - Robótica\n" +
+            "5 - Design Digital\n" +
+            "6 - Desenvolvimento Web"
+        );
+
+        let mensagem;
+
+        switch (opcao) {
+            case "1":
+                mensagem = "Você escolheu Programação! " +
+                    "Pratique lógica e crie pequenos programas para desenvolver suas habilidades.";
+                break;
+            case "2":
+                mensagem = "Você escolheu Desenvolvimento de Jogos! " +
+                    "Explore a criação de personagens e desafios para desenvolver seu primeiro jogo.";
+                break;
+            case "3":
+                mensagem = "Você escolheu Inteligência Artificial! " +
+                    "Estude como computadores aprendem com dados e experimente criar projetos.";
+                break;
+            case "4":
+                mensagem = "Você escolheu Robótica! " +
+                    "Explore sensores e circuitos e pratique programação para dar vida às suas ideias.";
+                break;
+            case "5":
+                mensagem = "Você escolheu Design Digital! " +
+                    "Pratique cores, formas e composição para desenvolver sua criatividade.";
+                break;
+            case "6":
+                mensagem = "Você escolheu Desenvolvimento Web! " +
+                    "Aprenda HTML, CSS e JavaScript e crie sua primeira página.";
+                break;
+            default:
+                mensagem = "Opção inválida! Escolha um número de 1 a 6.";
+        }
+
+        document.getElementById("resultado").textContent = mensagem;
+    </script>
+</body>
+</html>
